@@ -3,7 +3,7 @@
 @import 'fonts'
 @import 'header'
 
-video
+video:not(.static)
     position: absolute
     top: 0
     left: 0
@@ -32,7 +32,7 @@ video
         // background-color: red
 
 .titline
-    font-size: 20px
+    font-size: 22px
     max-width: 400px
     text-align: justify
     text-align-last: justify
@@ -45,11 +45,16 @@ main
     color: #fff
     position: relative
     z-index: 1
-    aspect-ratio: 16/6.2
+    // aspect-ratio: 16/5
     // min-height: 750px
     .container
         flex-direction: column
         min-height: 100%
+
+    .heading
+        img
+            transform-origin: 60% 50%
+            transform: scale(2)
 
     .col
         max-width: 50%
@@ -66,10 +71,14 @@ main
     .soc
         display: inline-block
         padding: 5px
+        border-radius: 2px
         img
             width: 50px
             height: 50px
             display: block
+
+        &:hover
+            background-color: rgba(255, 255, 255, .2)
 
 .about
     position: relative
@@ -88,13 +97,24 @@ main
         margin: 0 0 0 auto
 
 .roadmap
-    clip-path: polygon(0px 4%, 100% 8.9%, 100% 91%, 0px 86.5%)
+    clip-path: polygon(0px 0%, 100% 4%, 100% 100%, 0% 94%)
     position: relative
-    top: -270px
+    min-height: 100vh
+    padding-top: 100px
+    top: -250px
     .heading
         margin: 0 auto
+        text-align: center
         img
+            margin: 0 auto 
             transform-origin: 40% 50%
 
+    .linemap
+        position: absolute
+        top: 0px
+        left: 0
+        width: 100%
+
     video
-        position: static
+        width: 100%
+        display: block
