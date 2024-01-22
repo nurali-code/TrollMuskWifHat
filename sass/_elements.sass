@@ -82,7 +82,6 @@ mark
         background-color: #fff
         color: #000
 
-
 .fx, .fx-wrp
     display: flex
     justify-content: space-between
@@ -95,25 +94,58 @@ mark
 ul
     list-style: none
 
-@media screen and (max-width: 998px)
-    .container
-        max-width: 786px
+video
+    display: block
+    width: 100%
+video:not(.static)
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    object-fit: cover
+    object-position: top center
+    z-index: -11
 
-    h2, .h2
-        font-size: 24px
+.col
+    width: 50%
 
-    input, select
-        font-size: 14px
+.heading
+    margin: 0
+    line-height: 0
+    font-size: 0px
+    color: rgba(0, 0, 0, 0)
+    img
+        pointer-events: none
+        display: block
+        transform-origin: 60% 50%
+        transform: scale(1.8)
+        width: 300px
+        object-fit: contain
+        height: 150px
+        // background-color: red
 
-    section
-        padding: 45px 0
+.titline
+    font-size: 22px
+    max-width: 400px
+    text-align: justify
+    text-align-last: justify
+    img
+        margin-top: 20px
+        display: block
 
-    P 
-        font-size: 16px
+.overflow
+    overflow: hidden
 
-@media screen and (max-width: 700px)
-    section
-        padding: 35px 0
+.soc
+    display: inline-block
+    padding: 5px
+    border-radius: 4px
+    &-wrap
+        justify-content: center
+    img
+        width: 50px
+        height: 50px
+        display: block
 
-    .list li
-        padding-left: 36px
+    &:hover
+        background-color: rgba(255, 255, 255, .2)

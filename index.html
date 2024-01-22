@@ -16,63 +16,65 @@
 
 <body>
 
-    <main class="main">
-        <div class="container fx-wrp">
-            <header class="header fx">
-                <a href="/" class="logo"><img src="img/logo.png" alt="logo"></a>
-                <nav class="header-nav fx">
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">How to Biy</a>
-                    <a href="#">Roadmap</a>
-                    <a href="#">Contact</a>
-                </nav>
-                <button class="btn">Chart</button>
-            </header>
+    <div class="overflow">
+        <main class="main" id="main">
+            <div class="container fx-wrp">
+                <header class="header fx">
+                    <a href="/" class="logo"><img src="img/logo.png" alt="logo"></a>
+                    <nav class="header-nav fx">
+                        <a href="#main">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#">How to Buy</a>
+                        <a href="#roadmap">Roadmap</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                    <button class="btn">Chart</button>
+                </header>
 
-            <div class="col">
-                <h1 class="heading">
-                    TrollMuskWifHat
-                    <img src="img/h1.gif" alt="h1">
-                </h1>
-                <p class="titline">
-                    TrollMuskWifHat is a community-focused meme coin on
-                    Binance Smart Chain, inspired by Elon Musk
-                    with a troll face and a funny hat. Together
-                    we will make BSC memecoins great again!
-                </p>
-                <div class="fx-wrp">
-                    <a href="#" class="btn">Chart</a>
-                    <a href="https://telegram.org/" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
-                    <a href="https://twitter.com" target="_blank" class="soc"><img src="img/xx.gif" alt="tg"></a>
+                <div class="col">
+                    <h1 class="heading">
+                        TrollMuskWifHat
+                        <img src="img/h1.gif" alt="h1">
+                    </h1>
+                    <p class="titline">
+                        TrollMuskWifHat is a community-focused meme coin on
+                        Binance Smart Chain, inspired by Elon Musk
+                        with a troll face and a funny hat. Together
+                        we will make BSC memecoins great again!
+                    </p>
+                    <div class="fx-wrp">
+                        <a href="#" class="btn">Chart</a>
+                        <a href="https://telegram.org/" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
+                        <a href="https://twitter.com" target="_blank" class="soc"><img src="img/xx.gif" alt="tg"></a>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <img class="main__animation" src="img/animation.gif" alt="animation">
+                </div>
+
+            </div>
+            <video src="vid/1.mp4" poster="img/main.jpg" autoplay muted loop></video>
+        </main>
+
+        <section id="about" class="about">
+            <div class="container fx">
+                <div class="col">
+                    <h2 class="heading">About
+                        <img src="img/about.gif" alt="">
+                    </h2>
+                    <p class="titline">
+                        TrollMuskWifHat is a community-focused meme coin on
+                        Binance Smart Chain, inspired by Elon Musk
+                        with a troll face and a funny hat. Together
+                        we will make BSC memecoins great again!
+                        <img src="img/twit.png" alt="twit">
+                    </p>
                 </div>
             </div>
-
-            <div class="col">
-                <img class="main__animation" src="img/animation.gif" alt="animation">
-            </div>
-
-        </div>
-        <video src="vid/1.mp4" poster="img/main.jpg" autoplay muted loop></video>
-    </main>
-
-    <section id="about" class="about">
-        <div class="container fx">
-            <div class="col">
-                <h2 class="heading">About
-                    <img src="img/about.gif" alt="">
-                </h2>
-                <p class="titline">
-                    TrollMuskWifHat is a community-focused meme coin on
-                    Binance Smart Chain, inspired by Elon Musk
-                    with a troll face and a funny hat. Together
-                    we will make BSC memecoins great again!
-                    <img src="img/twit.png" alt="twit">
-                </p>
-            </div>
-        </div>
-        <video src="vid/about.mp4" poster="img/about.jpg" autoplay muted loop></video>
-    </section>
+            <video src="vid/about.mp4" poster="img/about.jpg" autoplay muted loop></video>
+        </section>
+    </div>
 
     <section id="roadmap" class="roadmap fx">
         <h2 class="heading">roadmap
@@ -80,17 +82,70 @@
         </h2>
         <img src="img/linemap.gif" class="linemap" alt="linemap">
         <ul class="fx">
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis reiciendis quod doloribus temporibus, aliquam voluptate, quidem, atque autem ducimus harum impedit! Temporibus, nesciunt! In eveniet facere nisi nostrum quis quo!</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis reiciendis quod doloribus temporibus, aliquam voluptate, quidem, atque autem ducimus harum impedit! Temporibus, nesciunt! In eveniet facere nisi nostrum quis quo!</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis reiciendis quod doloribus temporibus, aliquam voluptate, quidem, atque autem ducimus harum impedit! Temporibus, nesciunt! In eveniet facere nisi nostrum quis quo!</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis reiciendis quod doloribus temporibus, aliquam voluptate, quidem, atque autem ducimus harum impedit! Temporibus, nesciunt! In eveniet facere nisi nostrum quis quo!</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis reiciendis quod doloribus temporibus, aliquam voluptate, quidem, atque autem ducimus harum impedit! Temporibus, nesciunt! In eveniet facere nisi nostrum quis quo!</li>
+            <li>
+                <b>Stage 1</b>
+                - TrollMuskWifHat Concept <br>
+                - Market research <br>
+                - Team recruitment <br>
+                - Development of the website <br>
+                - Development of the contract
+            </li>
+            <li>
+                <b>Stage 2</b>
+                - Create socials <br>
+                - Pre-launch marketing campaign <br>
+                - Contract Audit <br>
+                - Presale on Pinksale <br>
+                - The first AMA Session
+            </li>
+            <li>
+                <b>Stage 3</b>
+                - Listing on Pancakeswap <br>
+                - Renounce ownership of contract <br>
+                - Dextools & Dexview updates <br>
+                - Post-launch marketing <br>
+                - CMC & CG Listings
+
+            </li>
+            <li>
+                <b>Stage 4</b>
+                - Coinzilla & A-ads Marketing <br>
+                - Major Influencer Marketing Push <br>
+                - Dextools Trending <br>
+                - Buy & Shill Competitions <br>
+                - Tier-2 CEX Listings
+            </li>
+            <li>
+                <b>Stage 5</b>
+                - Trending on twitter with our memetic power <br>
+                - 10000+ holders <br>
+                - Global partnerships <br>
+                - MEXC & Bitget Listings <br>
+                - Bybit & Binance Listings
+            </li>
         </ul>
         <video src="vid/map_bg.mp4" poster="img/map.jpg" autoplay muted loop></video>
     </section>
 
     <section id="tokenomics" class="tokenomics">
         <video src="vid/fullmp4.mp4" class="static" poster="img/map.jpg" autoplay muted loop></video>
+    </section>
+
+    <section id="contacts" class="contacts fx">
+        <h2 class="heading">contacts
+            <img src="img/contact_heading.gif" alt="map">
+        </h2>
+        <div class="bottom">
+            <div class="fx-wrp soc-wrap">
+                <a href="https://telegram.org/" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
+                <a href="https://twitter.com" target="_blank" class="soc"><img src="img/xx.gif" alt="tg"></a>
+            </div>
+            <a href="#" target="_blank">
+                <img src="img/designBy.gif" class="design" alt="design By">
+            </a>
+        </div>
+
+        <video src="vid/contact.mp4" poster="img/poster.jpg" autoplay muted loop></video>
     </section>
 
 

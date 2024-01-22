@@ -3,52 +3,14 @@
 @import 'fonts'
 @import 'header'
 
-video:not(.static)
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    object-fit: cover
-    object-position: top center
-    z-index: -11
-
-.col
-    width: 50%
-
-.heading
-    margin: 0
-    line-height: 0
-    font-size: 0px
-    color: rgba(0, 0, 0, 0)
-    img
-        pointer-events: none
-        display: block
-        transform-origin: 60% 50%
-        transform: scale(1.8)
-        width: 300px
-        object-fit: contain
-        height: 150px
-        // background-color: red
-
-.titline
-    font-size: 22px
-    max-width: 400px
-    text-align: justify
-    text-align-last: justify
-    img
-        margin-top: 20px
-        display: block
-
 main
     background-color: #000
     color: #fff
     position: relative
     z-index: 1
-    overflow: hidden
     .container
-
         min-height: 100%
+        justify-content: flex-start
 
     .heading
         img
@@ -56,16 +18,14 @@ main
             transform: scale(2)
 
     .col
-        max-width: 49%
+        max-width: 48%
         margin: auto auto auto 0
-        padding: 20px 0 140px
+        padding: 10px 0 120px
 
     .main__animation
         display: block
-        max-width: 60%
-        margin-left: auto
-        transform-origin: 90% 60%
-        transform: scale(1.5) translateX(20%)
+        max-width: 50%
+        margin: auto 20px 0 auto 
 
     p
         margin-bottom: 30px
@@ -74,21 +34,9 @@ main
         gap: 20px
         justify-content: flex-start
 
-    .soc
-        display: inline-block
-        padding: 5px
-        border-radius: 2px
-        img
-            width: 50px
-            height: 50px
-            display: block
-
-        &:hover
-            background-color: rgba(255, 255, 255, .2)
-
     video
         transform-origin: 50% 0%
-        transform: scale(1.4)
+        transform: scale(1.45)
 
 .about
     position: relative
@@ -109,16 +57,20 @@ main
 .roadmap
     clip-path: polygon(0px 0%, 100% 4%, 100% 100%, 0% 100%)
     min-height: 100vh
+    // background-color: red
     // max-height: 1080px
-    padding-top: 100px
+    padding: 100px 0
     flex-direction: column
-    top: -200px
+    top: -240px
     .heading
         width: 100%
         margin: 0 auto 10px
         text-align: center
         img
+            height: 200px
+            width: 100%
             margin: 0 auto
+            transform: scale(1)
             transform-origin: 40% 50%
 
     .linemap
@@ -129,26 +81,34 @@ main
         z-index: -1
         pointer-events: none
 
-    ul 
+    ul
+        width: 100%
         gap: 30px
         padding: 10px 20px 50px
         min-height: 39vw
-        li 
+        li
+            max-width: 20%
+            color: white
             font-size: 24px
-            border-radius: 20px
-            padding: 20px 
-            background-color: rgba(0,0,0,.5)
+            border-radius: 25px
+            padding: 20px
+            background-color: rgba(0,0,0,.9)
             &:first-child
                 align-self: flex-end
             &:nth-child(2)
                 margin-bottom: 20px
             &:nth-child(3)
-                margin-top: 40px
+                margin-top: 60px
             &:nth-child(4)
                 margin-bottom: 160px
-                
+
             &:last-child
                 align-self: flex-start
+
+        b
+            font-size: 34px
+            display: block
+            margin-bottom: 10px
 
     video
         width: 100%
@@ -162,3 +122,33 @@ main
     video
         width: 100%
         display: block
+
+.contacts
+    flex-direction: column
+    padding: 30px 0 10px
+    min-height: 100vh
+    .heading
+        width: 100%
+        margin: 0 auto 250px
+        text-align: center
+        img
+            height: 150px
+            width: 100%
+            margin: 0 auto
+            transform: scale(1)
+            transform-origin: 40% 50%
+    .design
+        width: 300px
+        display: block
+        margin: 20px auto 0
+        &:hover
+            filter: invert(1)
+
+    .soc
+        filter: invert(1)
+        img
+            width: 100px
+            height: 100px
+
+    video
+        object-position: center center
