@@ -82,7 +82,7 @@ mark
         background-color: #fff
         color: #000
 
-.fx, .fx-wrp
+.fx, .fx-wrp, .fx-col
     display: flex
     justify-content: space-between
     align-items: center
@@ -90,6 +90,9 @@ mark
 .fx-wrp
     align-items: flex-start
     flex-wrap: wrap
+
+.fx-col
+    flex-direction: column
 
 ul
     list-style: none
@@ -115,12 +118,26 @@ video:not(.static)
     font-size: 0px
     color: rgba(0, 0, 0, 0)
     img
+        object-fit: contain
+        transform-origin: 60% 50%
+
+    &.--static
+        width: 100%
+        margin: 0 auto 250px
+        text-align: center
+        img
+            height: 180px
+            width: 100%
+            margin: 0 auto
+            transform-origin: 40% 50%
+
+.heading:not(.--static)
+    img
         pointer-events: none
         display: block
         transform-origin: 60% 50%
         transform: scale(1.8)
         width: 300px
-        object-fit: contain
         height: 150px
         // background-color: red
 
