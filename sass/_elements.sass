@@ -87,10 +87,21 @@ mark
     color: white
     position: relative
     z-index: 1
+    img
+        transition: all ease .3s
+        width: 20px
+        display: inline-block
+        vertical-align: middle
+        margin-left: 20px
+        position: relative
+        left: 5px
     &:hover
         opacity: 1
         background-color: #fff
         color: #000
+        img 
+            filter: invert(1)
+
 
     &_overlay
         display: none
