@@ -162,8 +162,9 @@ main
         width: 300px
         display: block
         margin: 20px auto 0
+        object-fit: contain
         &:hover
-            filter: invert(1)
+            opacity: .6
 
     .soc
         filter: invert(1)
@@ -271,8 +272,23 @@ main
             gap: 15px
         
         &-item
-            width: 330px
+            width: 290px
             height: 70px
-            padding: 15px
+            padding: 10px
             img 
+                object-fit: contain
                 max-width: 60%
+
+    .contacts
+        .heading.--static
+            width: 60%
+            margin-bottom: 0 !important
+
+        .soc-wrap
+            width: 100%
+            justify-content: space-between
+            margin-bottom: 60px
+
+        .design
+            width: 200px
+            max-height: 9vh

@@ -21,13 +21,13 @@
             <div class="container fx-wrp">
                 <header class="header fx">
                     <a href="/" class="logo"><img src="img/logo.png" alt="logo"></a>
-                    <button class="btnMenu" title="Menu"></button>
-                    <nav class="header-nav fx">
-                        <a href="#main">Home</a>
+                    <button id="btnMenu" class="btnMenu" title="Menu"></button>
+                    <nav id="navbar" class="header-nav fx">
                         <a href="#about">About</a>
-                        <a href="#">How to Buy</a>
+                        <a href="#tokenomics">Tokenomics</a>
                         <a href="#roadmap">Roadmap</a>
-                        <a href="#contact">Contact</a>
+                        <a href="#partners">Partners</a>
+                        <a href="#contacts">Contact</a>
                     </nav>
                     <button class="btn">Chart</button>
                 </header>
@@ -46,8 +46,10 @@
                     <div class="fx-wrp">
                         <button class="btn" id="btn" title="copy" onclick="copyText()"
                             data-copy="0x624351363F49eA7748B43e0c63566D2a5A27506a">0x624351363F49eA7748B...</button>
-                        <a href="https://telegram.org/" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
-                        <a href="https://twitter.com" target="_blank" class="soc"><img src="img/xx.gif" alt="tg"></a>
+                        <a href="https://t.me/trollmuskwifhat" target="_blank" class="soc"><img src="img/tg.gif"
+                                alt="tg"></a>
+                        <a href="https://twitter.com/trollmuskwifhat" target="_blank" class="soc"><img src="img/xx.gif"
+                                alt="tg"></a>
                     </div>
                     <button class="btn_overlay"></button>
                 </div>
@@ -67,10 +69,10 @@
                         <img src="img/about.gif" alt="">
                     </h2>
                     <p class="titline">
-                        TrollMuskWifHat is a community-focused meme coin on
-                        Binance Smart Chain, inspired by Elon Musk
-                        with a troll face and a funny hat. Together
-                        we will make BSC memecoins great again!
+                        TrollMuskWifHat is a degenerate gambler wif fits of madness on the Binance Smart Chain, inspired
+                        by Elon Musk, the CTO wif hat. Wif low initial liquidity, strong community, and a renounced
+                        contract, it aims to bring laughter and fun. Join us on this exciting journey to becoming one of
+                        the top meme coins!
                         <img src="img/twit.png" alt="twit">
                     </p>
                 </div>
@@ -162,15 +164,15 @@
         <h2 class="heading --static">contacts
             <img src="img/contact_heading.gif" alt="map">
         </h2>
-        <div class="bottom">
-            <div class="fx-wrp soc-wrap">
-                <a href="https://telegram.org/" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
-                <a href="https://twitter.com" target="_blank" class="soc"><img src="img/xx.gif" alt="tg"></a>
-            </div>
-            <a href="#" target="_blank">
-                <img src="img/designBy.gif" class="design" alt="design By">
-            </a>
+
+        <div class="fx-wrp soc-wrap">
+            <a href="https://t.me/trollmuskwifhat" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
+            <a href="https://twitter.com/trollmuskwifhat" target="_blank" class="soc"><img src="img/xx.gif"
+                    alt="tg"></a>
         </div>
+        <a href="#" target="_blank">
+            <img src="img/designBy.gif" class="design" alt="design By">
+        </a>
 
         <video src="vid/contact-mob.mp4" class="mob" poster="img/poster.jpg" autoplay muted loop></video>
         <video src="vid/contact.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
@@ -185,6 +187,14 @@
             else { mobVideos.forEach(video => { video.parentNode.removeChild(video); }); }
         } checkScreenWidth();
         window.addEventListener('resize', checkScreenWidth);
+
+        var btnMenu = document.getElementById('btnMenu'),
+            navbar = document.getElementById('navbar');
+        btnMenu.onclick = () => {
+            navbar.classList.toggle('is_active');
+            btnMenu.classList.toggle('is_active');
+        };
+
 
         function copyText() {
             // Находим кнопку по классу

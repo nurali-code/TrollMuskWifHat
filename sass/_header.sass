@@ -31,17 +31,39 @@
             display: none
 
         &-nav
-            display: none
-        
-        .btn 
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            display: block
+            background-color: black
+            text-align: center
+            transition: .4s ease all
+            opacity: 0
+            visibility: hidden
+            transform: translateY(-30px)
+            padding: 100px 30px 30px
+            a
+                display: block
+                width: 100%
+
+            &.is_active
+                opacity: 1
+                visibility: visible
+                transform: translateY(0)
+
+        .btn
             display: none
 
         .btnMenu
             display: block
             width: 80px
             height: 80px
-            margin: 0 auto 
+            margin: 0 auto
             background-image: url('../img/menu.gif')
             background-repeat: no-repeat
             background-position: center center
             background-size: contain
+            position: relative
+            z-index: 1111
+            &.is_active
