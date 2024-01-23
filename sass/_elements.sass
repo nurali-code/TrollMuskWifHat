@@ -35,7 +35,6 @@ body
     z-index: 1
 
 section
-    // padding: 60px 0
     position: relative
     z-index: 1
 
@@ -98,9 +97,12 @@ ul
     list-style: none
 
 video
-    display: block
     width: 100%
     pointer-events: none
+    &.mob
+        display: none !important
+    &.pc
+        display: block !important
 
 video:not(.static)
     position: absolute
@@ -168,3 +170,41 @@ video:not(.static)
 
     &:hover
         background-color: rgba(255, 255, 255, .2)
+
+@media screen and ( max-width: 1000px )
+    section
+        min-height: 100vh !important
+        min-height: 100dvh !important
+        top: 0 !important
+        clip-path: none !important
+
+    video
+        &.mob
+            display: block !important
+        &.pc
+            display: none !important
+
+    .col
+        width: 100% !important
+        max-width: 100% !important
+
+    .heading
+        margin: 0 auto
+        max-width: 85%
+        line-height: 0
+        font-size: 0px
+        color: rgba(0, 0, 0, 0)
+        img
+            object-fit: contain
+            object-position: center center
+            transform-origin: 50% 50%
+
+        &.--static
+            width: 100%
+            margin: 0 auto 
+            text-align: center
+            img
+                height: unset
+                width: 100%
+                object-position: center center
+                

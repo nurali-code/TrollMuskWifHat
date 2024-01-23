@@ -166,3 +166,46 @@ main
 
     video
         object-position: center center
+
+@media screen and ( max-width: 1000px )
+    main
+        clip-path: none !important
+        padding-bottom: 100px
+        .titline
+            display: none
+
+        .col
+            width: 100%
+            max-width: 100%
+            padding: 0
+            .fx-wrp
+                display: none
+
+        .heading.--static
+            width: 90%
+            margin: 0 auto !important
+            img
+                display: block
+                height: unset !important
+                object-position: center center
+                transform: translateX(0%)
+                transform-origin: 50% 50%
+
+        .main__animation
+            max-width: 60%
+            margin: 0 auto
+
+    .about
+        aspect-ratio: auto
+
+    .roadmap
+        video 
+            transform: scale(1)
+            
+        ul 
+            display: block
+
+            li 
+                width: 100%
+                max-width: 100%
+                margin: 0 0 20px !important
