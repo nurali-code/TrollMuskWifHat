@@ -56,7 +56,8 @@
                 </div>
 
             </div>
-            <video src="vid/1.mp4" poster="img/main.jpg" autoplay muted loop></video>
+            <video src="vid/main.mp4" class="mob" poster="img/main.jpg" autoplay muted loop></video>
+            <video src="vid/1.mp4" class="pc" poster="img/main.jpg" autoplay muted loop></video>
         </main>
 
         <section id="about" class="about">
@@ -173,9 +174,16 @@
         <video src="vid/contact.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
     </section>
 
-
-
     <script>
+        function checkScreenWidth() {
+            const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+            const pcVideos = document.querySelectorAll('video.pc');
+            const mobVideos = document.querySelectorAll('video.mob');
+            if (screenWidth < 1000) { pcVideos.forEach(video => { video.parentNode.removeChild(video); }); }
+            else { mobVideos.forEach(video => { video.parentNode.removeChild(video); }); }
+        } checkScreenWidth();
+        window.addEventListener('resize', checkScreenWidth);
+
         function copyText() {
             // Находим кнопку по классу
             var button = document.querySelector('#btn');
