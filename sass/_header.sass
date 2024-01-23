@@ -2,12 +2,17 @@
     position: relative
     z-index: 9999
     width: 100%
-    padding: 10px 0
+    padding: 20px 0 10px
     .logo
         display: block
-        max-width: 70px
+        max-width: 80px
+        transition: all ease 1s
         img
             display: block
+        
+        &:hover
+            opacity: 1
+            transform: rotate(380deg)
 
     &-nav
         a
@@ -16,3 +21,9 @@
             font-size: 18px
             &:hover
                 text-decoration: underline
+
+    .btnMenu
+        display: none
+
+    @media screen and ( max-width: 1000px )
+        

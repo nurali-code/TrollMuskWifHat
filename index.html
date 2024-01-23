@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=1200"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Troll Musk Wif Hat</title>
 
     <meta name="theme-color" content="#DA2B36">
@@ -21,6 +21,7 @@
             <div class="container fx-wrp">
                 <header class="header fx">
                     <a href="/" class="logo"><img src="img/logo.png" alt="logo"></a>
+                    <button class="btnMenu" title="Menu">Chart</button>
                     <nav class="header-nav fx">
                         <a href="#main">Home</a>
                         <a href="#about">About</a>
@@ -43,7 +44,8 @@
                         we will make BSC memecoins great again!
                     </p>
                     <div class="fx-wrp">
-                        <a href="#" class="btn">Chart</a>
+                        <button class="btn" id="btn" title="copy" onclick="copyText()"
+                            data-copy="0x624351363F49eA7748B43e0c63566D2a5A27506a">0x624351363F49eA7748B...</button>
                         <a href="https://telegram.org/" target="_blank" class="soc"><img src="img/tg.gif" alt="tg"></a>
                         <a href="https://twitter.com" target="_blank" class="soc"><img src="img/xx.gif" alt="tg"></a>
                     </div>
@@ -56,7 +58,6 @@
             </div>
             <video src="vid/1.mp4" poster="img/main.jpg" autoplay muted loop></video>
         </main>
-
 
         <section id="about" class="about">
             <div class="container fx">
@@ -75,8 +76,6 @@
             </div>
             <video src="vid/about.mp4" poster="img/poster.jpg" autoplay muted loop></video>
         </section>
-
-
 
         <section id="roadmap" class="roadmap fx-col">
             <h2 class="heading --static">roadmap
@@ -133,8 +132,6 @@
             <video src="vid/fullmp4.mp4" class="static" poster="img/map.jpg" autoplay muted loop></video>
         </section>
     </div>
-</div>
-
 
     <section id="partners" class="partners fx-col">
         <h2 class="heading --static">contacts
@@ -172,8 +169,55 @@
 
 
 
+    <script>
+        function copyText() {
+            // Находим кнопку по классу
+            var button = document.querySelector('#btn');
 
-    <!-- <script src="./js/aos.js"></script> -->
+            // Получаем значение атрибута data-copy
+            var dataToCopy = button.getAttribute('data-copy');
+
+            // Используем Clipboard API для копирования текста в буфер обмена
+            navigator.clipboard.writeText(dataToCopy)
+                .then(function () {
+                    // Успешно скопировано
+                    alert('Текст скопирован: ' + dataToCopy);
+                })
+                .catch(function (err) {
+                    // Обработка ошибки, если копирование не удалось
+                    console.error('Не удалось скопировать текст: ', err);
+                });
+        }
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, options);
+
+        // Target all videos on the page
+        const allVideos = document.querySelectorAll('video');
+
+        // Observe all videos
+        allVideos.forEach(video => {
+            observer.observe(video);
+        });
+
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // If the video is in view, play it
+                    entry.target.play();
+                } else {
+                    // If the video is out of view, pause it
+                    entry.target.pause();
+                }
+            });
+        }
+
+    </script>
 </body>
 
 </html>
