@@ -81,6 +81,18 @@ mark
         background-color: #fff
         color: #000
 
+    &_overlay
+        display: none
+        @media screen and ( max-width: 1000px )
+            display: block
+            width: 180px
+            height: 70px
+            margin: 10px auto
+            background-repeat: no-repeat
+            background-image: url('../img/btn.gif')
+            background-position: center center
+            background-size: contain
+
 .fx, .fx-wrp, .fx-col
     display: flex
     justify-content: space-between
@@ -178,6 +190,7 @@ video:not(.static)
         clip-path: none !important
 
     video
+        object-position: center center !important
         &.mob
             display: block !important
         &.pc
@@ -199,11 +212,10 @@ video:not(.static)
             transform-origin: 50% 50%
 
         &.--static
-            width: 100%
-            margin: 0 auto 
+            width: 70%
+            margin: 0 auto
             text-align: center
             img
                 height: unset
                 width: 100%
                 object-position: center center
-                
