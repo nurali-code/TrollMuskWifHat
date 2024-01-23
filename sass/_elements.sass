@@ -99,9 +99,8 @@ mark
         opacity: 1
         background-color: #fff
         color: #000
-        img 
+        img
             filter: invert(1)
-
 
     &_overlay
         display: none
@@ -134,11 +133,8 @@ ul
 video
     width: 100%
     pointer-events: none
-    &.mob
-        display: none !important
-    &.pc
-        display: block !important
-
+    display: block
+    
 video:not(.static)
     position: absolute
     top: 0
@@ -211,6 +207,7 @@ video:not(.static)
         background-repeat: no-repeat
         background-size: cover
         background-position: center center
+
     section
         min-height: 100vh !important
         min-height: 100dvh !important

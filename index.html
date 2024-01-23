@@ -58,7 +58,7 @@
                     <img class="main__animation" src="img/animation.gif" alt="animation">
                 </div>
             </div>
-            <video src="vid/1.mp4" class="pc" poster="img/main.jpg" autoplay muted loop></video>
+            <video src="vid/1.mp4" poster="img/main.jpg" autoplay muted loop></video>
         </main>
 
         <section id="about" class="about">
@@ -76,7 +76,7 @@
                     </p>
                 </div>
             </div>
-            <video src="vid/about.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
+            <video src="vid/about.mp4" poster="img/poster.jpg" autoplay muted loop></video>
         </section>
 
         <section id="roadmap" class="roadmap fx-col">
@@ -127,14 +127,14 @@
                     - Bybit & Binance Listings
                 </li>
             </ul>
-            <video src="vid/map_bg.mp4" class="pc" poster="img/map.jpg" autoplay muted loop></video>
+            <video src="vid/map_bg.mp4" poster="img/map.jpg" autoplay muted loop></video>
         </section>
 
         <section id="tokenomics" class="tokenomics">
             <h1 class="heading">tokenomics
                 <img src="img/tknm.gif" alt="tokenomics">
             </h1>
-            <video src="vid/fullmp4.mp4" class="static pc" poster="img/map.jpg" autoplay muted loop></video>
+            <video src="vid/fullmp4.mp4" class="static" poster="img/map.jpg" autoplay muted loop></video>
         </section>
     </div>
 
@@ -152,7 +152,7 @@
             <div class="partners-item fx"><img src="img/dexview.svg" alt="img"></div>
         </div>
 
-        <video src="vid/partners.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
+        <video src="vid/partners.mp4" poster="img/poster.jpg" autoplay muted loop></video>
     </section>
 
     <section id="contacts" class="contacts fx-col">
@@ -165,19 +165,22 @@
             <a href="https://twitter.com/trollmuskwifhat" target="_blank" class="soc"><img src="img/xx.gif"
                     alt="tg"></a>
         </div>
+
+        <a target="_blank" href="https://www.dexview.com/bsc/0x624351363F49eA7748B43e0c63566D2a5A27506a" class="ape"><img src="img/ape.gif" alt="ape"></a>
+
         <a href="https://www.dexview.com/bsc/0x624351363F49eA7748B43e0c63566D2a5A27506a" target="_blank">
             <img src="img/designBy.gif" class="design" alt="design By">
         </a>
 
-        <video src="vid/contact.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
+        <video src="vid/contact.mp4" poster="img/poster.jpg" autoplay muted loop></video>
     </section>
 
     <script>
         function checkScreenWidth() {
             const screenWidth = window.innerWidth || document.documentElement.clientWidth;
-            const pcVideos = document.querySelectorAll('video.pc');
+            const Videos = document.querySelectorAll('video');
             if (screenWidth < 1000) {
-                pcVideos.forEach(video => { video.parentNode.removeChild(video); });
+                Videos.forEach(video => { video.parentNode.removeChild(video); });
             } else {
                 const options = { root: null, rootMargin: '0px', threshold: 0.3 };
                 const observer = new IntersectionObserver(handleIntersection, options);
