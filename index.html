@@ -194,7 +194,6 @@
             btnMenu.classList.toggle('is_active');
         };
 
-
         function copyText() {
             // Находим кнопку по классу
             var button = document.querySelector('#btn');
@@ -214,33 +213,18 @@
                 });
         }
 
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.3
-        };
-
-        const observer = new IntersectionObserver(handleIntersection, options);
-
-        // Target all videos on the page
-        const allVideos = document.querySelectorAll('video');
-
-        // Observe all videos
-        allVideos.forEach(video => {
-            observer.observe(video);
-        });
-
-        function handleIntersection(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // If the video is in view, play it
-                    entry.target.play();
-                } else {
-                    // If the video is out of view, pause it
-                    entry.target.pause();
-                }
-            });
-        }
+        // const options = { root: null, rootMargin: '0px', threshold: 0.3 };
+        // const observer = new IntersectionObserver(handleIntersection, options);
+        // const allVideos = document.querySelectorAll('video');
+        // allVideos.forEach(video => {
+        //     observer.observe(video);
+        // });
+        // function handleIntersection(entries, observer) {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) { entry.target.play(); }
+        //         else { entry.target.pause(); }
+        //     });
+        // }
 
     </script>
 </body>
