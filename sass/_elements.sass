@@ -195,6 +195,11 @@ video:not(.static)
         background-color: rgba(255, 255, 255, .2)
 
 @media screen and ( max-width: 1000px )
+    main,
+    section
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center center
     section
         min-height: 100vh !important
         min-height: 100dvh !important
@@ -202,11 +207,7 @@ video:not(.static)
         clip-path: none !important
 
     video
-        object-position: center center !important
-        &.mob
-            display: block !important
-        &.pc
-            display: none !important
+        display: none !important
 
     .col
         width: 100% !important

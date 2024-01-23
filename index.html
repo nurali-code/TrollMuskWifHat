@@ -57,7 +57,6 @@
                     <img class="main__animation" src="img/animation.gif" alt="animation">
                 </div>
             </div>
-            <video src="vid/main.mp4" class="mob" poster="img/main.jpg" autoplay muted loop></video>
             <video src="vid/1.mp4" class="pc" poster="img/main.jpg" autoplay muted loop></video>
         </main>
 
@@ -76,7 +75,6 @@
                     </p>
                 </div>
             </div>
-            <video src="vid/about_mob.mp4" class="mob" poster="img/poster.jpg" autoplay muted loop></video>
             <video src="vid/about.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
         </section>
 
@@ -128,7 +126,6 @@
                     - Bybit & Binance Listings
                 </li>
             </ul>
-            <video src="vid/map_bg-mob.mp4" class="mob" poster="img/map.jpg" autoplay muted loop></video>
             <video src="vid/map_bg.mp4" class="pc" poster="img/map.jpg" autoplay muted loop></video>
         </section>
 
@@ -136,7 +133,6 @@
             <h1 class="heading">tokenomics
                 <img src="img/tknm.gif" alt="tokenomics">
             </h1>
-            <video src="vid/fullmp4-mob.mp4" class="static mob" poster="img/map.jpg" autoplay muted loop></video>
             <video src="vid/fullmp4.mp4" class="static pc" poster="img/map.jpg" autoplay muted loop></video>
         </section>
     </div>
@@ -155,7 +151,6 @@
             <div class="partners-item fx"><img src="img/dexview.svg" alt="img"></div>
         </div>
 
-        <video src="vid/partners-mob.mp4" class="mob" poster="img/poster.jpg" autoplay muted loop></video>
         <video src="vid/partners.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
     </section>
 
@@ -173,7 +168,6 @@
             <img src="img/designBy.gif" class="design" alt="design By">
         </a>
 
-        <video src="vid/contact-mob.mp4" class="mob" poster="img/poster.jpg" autoplay muted loop></video>
         <video src="vid/contact.mp4" class="pc" poster="img/poster.jpg" autoplay muted loop></video>
     </section>
 
@@ -181,11 +175,23 @@
         function checkScreenWidth() {
             const screenWidth = window.innerWidth || document.documentElement.clientWidth;
             const pcVideos = document.querySelectorAll('video.pc');
-            const mobVideos = document.querySelectorAll('video.mob');
-            if (screenWidth < 1000) { pcVideos.forEach(video => { video.parentNode.removeChild(video); }); }
-            else { mobVideos.forEach(video => { video.parentNode.removeChild(video); }); }
+            if (screenWidth < 1000) {
+                pcVideos.forEach(video => { video.parentNode.removeChild(video); });
+            } else {
+                const options = { root: null, rootMargin: '0px', threshold: 0.3 };
+                const observer = new IntersectionObserver(handleIntersection, options);
+                const allVideos = document.querySelectorAll('video');
+                allVideos.forEach(video => {
+                    observer.observe(video);
+                });
+                function handleIntersection(entries, observer) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) { entry.target.play(); }
+                        else { entry.target.pause(); }
+                    });
+                }
+            }
         } checkScreenWidth();
-        window.addEventListener('resize', checkScreenWidth);
 
         var btnMenu = document.getElementById('btnMenu'),
             navbar = document.getElementById('navbar');
@@ -195,36 +201,14 @@
         };
 
         function copyText() {
-            // Находим кнопку по классу
             var button = document.querySelector('#btn');
-
-            // Получаем значение атрибута data-copy
             var dataToCopy = button.getAttribute('data-copy');
-
-            // Используем Clipboard API для копирования текста в буфер обмена
             navigator.clipboard.writeText(dataToCopy)
-                .then(function () {
-                    // Успешно скопировано
-                    alert('Текст скопирован: ' + dataToCopy);
-                })
-                .catch(function (err) {
-                    // Обработка ошибки, если копирование не удалось
-                    console.error('Не удалось скопировать текст: ', err);
-                });
+                .then(function () { alert('Текст скопирован: ' + dataToCopy); })
+                .catch(function (err) { console.error('Не удалось скопировать текст: ', err); });
         }
 
-        // const options = { root: null, rootMargin: '0px', threshold: 0.3 };
-        // const observer = new IntersectionObserver(handleIntersection, options);
-        // const allVideos = document.querySelectorAll('video');
-        // allVideos.forEach(video => {
-        //     observer.observe(video);
-        // });
-        // function handleIntersection(entries, observer) {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) { entry.target.play(); }
-        //         else { entry.target.pause(); }
-        //     });
-        // }
+
 
     </script>
 </body>
